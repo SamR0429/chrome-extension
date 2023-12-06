@@ -28,9 +28,6 @@ function renderLinks(links) {
     let listItems = '';
 
     for (let i = 0; i < links.length; i++) {
-
-        //this is the original version and we refactored to make code work faster ?? and to clean up the code. this is done to wait until the for loop is done iterating to then render so to not mess with the dom every iteration
-        // ulEl.innerHTML += "<li>" + myLeads[i] + "</li>";
         listItems += `
             <li>
                 <a target='_blank' href='${links[i]}'>
@@ -44,8 +41,6 @@ function renderLinks(links) {
 }
 
 tabBtn.addEventListener("click", function () {
-    // chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-    // })
 
     chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
 
