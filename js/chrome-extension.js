@@ -14,6 +14,18 @@ const ulEl = document.querySelector(".ul-el");
 // myLeads = JSON.stringify(myLeads);
 // console.log(typeof myLeads);
 
+// localStorage.clear();
+
+let leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"));
+console.log(leadsFromLocalStorage);
+
+if(leadsFromLocalStorage){
+    myLeads = leadsFromLocalStorage;
+    renderLeads();
+}
+
+
+
 inputBtn.addEventListener("click", function () {
 
     myLeads.push(inputEl.value);

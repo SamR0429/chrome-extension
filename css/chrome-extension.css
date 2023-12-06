@@ -14,15 +14,23 @@ input {
     border-width: 1px;
 }
 
-button {
+button{
     border-radius: 0;
-    border: none;
-    background-color: #5f9341;
-    color: white;
+    border: 1px solid #5f9341;
     font-weight: bold;
     margin-top: 8px;
     padding: 10px 20px;
     cursor: pointer;
+}
+
+.input-btn {
+    background-color: #5f9341;
+    color: white;
+}
+
+.delete-btn{
+    background-color: white;
+    color: #5f9341;
 }
 
 ul {
