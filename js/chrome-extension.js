@@ -43,19 +43,17 @@ function renderLinks(links) {
     ulEl.innerHTML = listItems;
 }
 
-const tabs = [
-    {url: "https://www.linkedin.com/in/per-harald-borgen/"}
-];
-tabBtn.addEventListener("click", function(){
-    // console.log(tabs[0].url);
+tabBtn.addEventListener("click", function () {
+    // chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    // })
 
-    myLinks.push(tabs[0].url);
-    tabBtn.value = '';
+    chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
 
-    localStorage.setItem("myLinks", JSON.stringify(myLinks));
+        myLinks.push(tabs[0].url);
+        localStorage.setItem("myLinks", JSON.stringify(myLinks));
 
-    renderLinks(myLinks);
-    console.log(localStorage.getItem("myLinks"));
+        renderLinks(myLinks);
+    })
 
 });
 
